@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Clonereact from './Components/Clonereact';
+import Navbar from './Components/Navbar';
+import Todo from './Components/Todo';
+import ControlledForm from './Components/controlledForm';
+import FetchEffects from './Components/useEffectHook';
+
+// import Home from './Pages/Home';
+import Login from './Pages/Login';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import LandingSection from './portfolio/Landing';
+import Project from './portfolio/Project';
+import Contact from './portfolio/Contact';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        {/* those routes that are to be rendered every where are in this block called Broser router */}
+        <Navbar />
+        <LandingSection />
+        <Project />
+        <Contact />
+        <Routes>
+          {/* It takes the routes and render them, on route */}
+          {/* <Route exact path='/' element={< Todo />} />
+          <Route exact path='/form' element={<ControlledForm />} />
+          <Route exact path='/effect' element={<FetchEffects />} />
+          <Route exact path='/signup' element={<Login />} /> */}
+        </Routes>
+      </BrowserRouter >
+    </>
   );
 }
 
